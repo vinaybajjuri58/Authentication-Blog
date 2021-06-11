@@ -1,5 +1,5 @@
 
-# Authorization Implementation
+# Authentication Implementation
 
 Implemented Authentication (userSignup,userLogin ,authValidator private routes public routes )
 
