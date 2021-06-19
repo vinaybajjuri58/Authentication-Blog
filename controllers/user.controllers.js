@@ -4,16 +4,16 @@ const bcrypt = require("bcrypt");
 const userLogin = async (req, res) => {
   const { email, password } = req.body;
   try {
-    const userData = User.findOne({ email: email });
+    const userData = await User.findOne({ email: email });
     if (!userData) {
-      res.status(500).json({
+      return res.status(500).json({
         success: false,
         message: "Email doesnt exists",
       });
     }
     const isValidPassword = await bcrypt.compare(password, userData.password);
     if (!isValidPassword) {
-      res.status(500).json({
+      return res.status(500).json({
         success: false,
         message: "Invalid Credentials",
       });
@@ -26,6 +26,7 @@ const userLogin = async (req, res) => {
       userToken: token,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json({
       success: false,
       message: "Error in Login process",
