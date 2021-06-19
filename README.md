@@ -24,6 +24,14 @@ Install dependencies
 ```bash
   npm install
 ```
+create a .env file and put the following environment variables 
+### Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`DB_URL`
+
+`KEY = require('crypto').randomBytes(256).toString('base64')`
 
 Start the server
 
@@ -41,12 +49,6 @@ Start the server
 **token creation:** jsonwebtoken
 
   
-## Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
-
-`DB_URL`
-
-`KEY = require('crypto').randomBytes(256).toString('base64')`
 
   
